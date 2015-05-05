@@ -10,6 +10,7 @@ Tasks:
 3) Create a homepage (welcome.jsp)
 
 4) Create a 2 databases:
+
     Database 1 - SIGNUP
     * ID (hidden)
     * Sign Up Date
