@@ -12,18 +12,18 @@ Tasks:
 4) Create a 2 databases:
 
     Database 1 - SIGNUP
-    * ID (hidden)
-    * Sign Up Date
-    * Customer Name
-    * Customer Phone Number
+    * First Name
+    * Last Name
+    * Phone Number
     * Email Address
-    * Number of Rooms
+    * Medical History
     * Health Issues
+    * Join Date
+    * ID (hidden)
     
     Database 2 - USERS
     * Username
     * Password
-    * Joindate
     * ID (hidden)
     
 5) Create a java object for accessing the customer's data
@@ -46,12 +46,9 @@ Tasks:
    * When an Administrator is logged in add a Delete button. The Delete button will invoke the deleteCustomer method and          delete the Customer file.
    * Also when Administrator is logged in add a Update button. The Update button will invoke the updateDatabase method and        update the database.
 
-9) Create an Error page
-   * Update Error page for the correct exception to be handled
+9) Choose a CSS to make program look presentable (Bootstrap)
 
-10) Choose a CSS to make program look presentable (Bootstrap)
-
-11) Deploy application on the web (Digital Ocean)
+10) Deploy application on the web (Digital Ocean)
 
 
 
