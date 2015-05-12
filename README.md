@@ -11,7 +11,7 @@ Tasks:
 
 4) Create a 2 databases:
 
-    Database 1 - SIGNUP
+    Database 1 - SIGNUPS
     * First Name
     * Last Name
     * Phone Number
