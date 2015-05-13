@@ -6,7 +6,7 @@
     </head>
     <body>
         <div id="bd">
-            <h1> Welcome to TOFKA Long Term Care!</h1>
+            <h1>Welcome to TOFKA Long Term Care!</h1>
             <h2 class="flash">${flash}</h2>
             <p>
                 <c:choose>
@@ -21,9 +21,9 @@
                 </c:choose>
             </p>
             <h2>Welcome to TOFKA</h2>
-            <c:forEach var="user" items="${users}">
-                <div class="user">
-                    <span class="userDate">(user since ${user.joindate})</span>
+            <c:forEach var="signup" items="${signups}">
+                <div class="signup">
+                    <span class="signDate">(Signed up on ${signup.joindate})</span>
                 </div>
             </c:forEach>
         </div>

@@ -1,7 +1,6 @@
 package edu.acc.j2ee.tofka.jpa;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -22,7 +19,6 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u"),
     @NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username"),
     @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password"),
-    @NamedQuery(name = "User.findByJoindate", query = "SELECT u FROM User u WHERE u.joindate = :joindate"),
     @NamedQuery(name = "User.findById", query = "SELECT u FROM User u WHERE u.id = :id")})
 
 public class User implements Serializable {
@@ -37,9 +33,6 @@ public class User implements Serializable {
     @Size(min = 4, max = 10)
     @Column(name = "PASSWORD")
     private String password;
-    @Column(name = "JOINDATE")
-    @Temporal(TemporalType.DATE)
-    private Date joindate = CurrentDate.now();
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -78,15 +71,7 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    public Date getJoindate() {
-        return joindate;
-    }
-    
-    public void setJoindate(Date joindate) {
-        this.joindate = joindate;
-    }
-    
+
     public Integer getId() {
         return id;
     }
