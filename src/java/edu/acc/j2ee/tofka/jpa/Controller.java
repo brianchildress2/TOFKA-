@@ -6,18 +6,24 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/")
 public class Controller extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/welcome.jsp").forward(request, response);
         String action = request.getParameter("action");
         if (action == null) action = "welcome";
         String destination;
         switch (action) {
             default:
+            case "welcome":
+                destination = welcome(request);
+                break;
             case "signup":
                 destination = signup(request);
                 break;
@@ -147,5 +153,15 @@ public class Controller extends HttpServlet {
     private EntityManager getEM() {
         EntityManagerFactory emf = (EntityManagerFactory)getServletContext().getAttribute("emf");
         return emf.createEntityManager();
+    }
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        processRequest(request, response);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        processRequest(request, response);
     }
 }
