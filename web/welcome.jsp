@@ -11,12 +11,12 @@
             <p>
                 <c:choose>
                     <c:when test="${sessionScope.user.username != null}">
-                        <a class="nav" href="welcome.jsp?action=database">Hey, ${sessionScope.user.username}</a>
-                        <a class="nav" href="welcome.jsp?action=logout">Logout of TOFKA</a>
+                        <a class="nav" href="/TOFKA/database.jsp">Hey, ${sessionScope.user.username}</a>
+                        <a class="nav" href="/TOFKA/logout.jsp">Logout of TOFKA</a>
                     </c:when>
                     <c:otherwise>
-                        <a class="nav" href="welcome.jsp?action=login">Login</a>
-                        <a class="nav" href="welcome.jsp?action=signup">Sign Up</a>
+                        <a class="nav" href="/TOFKA/login.jsp">Login</a>
+                        <a class="nav" href="/TOFKA/signup.jsp">Sign Up</a>
                     </c:otherwise>
                 </c:choose>
             </p>

@@ -41,7 +41,6 @@ public class Controller extends HttpServlet {
     }
     
     private String welcome(HttpServletRequest request) throws ServletException {
-        EntityManager em = getEM();
         return "welcome";
     }
     
@@ -59,7 +58,7 @@ public class Controller extends HttpServlet {
             return "signup";
         }
         String phonenumber = request.getParameter("phonenumber");
-        if (phonenumber.length() < 10 || phonenumber.length() > 10) {
+        if (phonenumber.length() == 10) {
             request.setAttribute("flash", "Your phone number must be only 10 numbers.");
             return "signup";
         }
@@ -79,8 +78,9 @@ public class Controller extends HttpServlet {
             return "signup";
         }
         
-        //Signup signup = new Signup(firstname, lastname, phonenumber, emailaddress, medicalhistory, joindate);
-        //signup.setSignup(new Signup());
+//        Signup signup = new Signup(firstname, lastname, phonenumber, emailaddress, medicalhistory, joindate);
+//        signup.setSignup(new Signup());
+        
         EntityManager em = getEM();
         try {
             em.getTransaction().begin();
