@@ -11,6 +11,7 @@
             <h2 class="flash">${flash}</h2>
             <form method="SIGNUP" action="welcome.jsp">
                 <input type="hidden" name="action" value="database"/>
+                
                 <table>
                     <tr>
                         <div class="firstname">${signup.firstname}</div>
