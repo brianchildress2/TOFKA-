@@ -95,7 +95,7 @@ public class Controller extends HttpServlet {
     }
     
     private String login(HttpServletRequest request) throws ServletException {
-   /* //  User user = (User)request.getSession().getAttribute("user");
+   /*   User user = (User)request.getSession().getAttribute("user");
         if (user == null) {
             request.setAttribute("flash", "You are not logged in!");
             return "login";
