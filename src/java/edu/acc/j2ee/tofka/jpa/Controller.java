@@ -95,8 +95,8 @@ public class Controller extends HttpServlet {
     }
     
     private String login(HttpServletRequest request) throws ServletException {
-        User user = null; //=(User)request.getSession().getAttribute("user");
-   /*     if (user == null) {
+   /* //  User user = (User)request.getSession().getAttribute("user");
+        if (user == null) {
             request.setAttribute("flash", "You are not logged in!");
             return "login";
         }*/
@@ -105,11 +105,11 @@ public class Controller extends HttpServlet {
         String password = request.getParameter("password");
         EntityManager em = getEM();
         try {
-            user = (User)em.createNamedQuery("User.findByUsername").setParameter("username", username).getSingleResult();
+            User user = (User)em.createNamedQuery("User.findByUsername").setParameter("username", username).getSingleResult();
             if (!user.getPassword().equals(password)) throw new Exception("Access Denied");
             request.getSession().getAttribute("user");
             request.getSession().setAttribute("userid", user.getId());
-            return database(request);
+            return "database";
         } catch (Exception e) {
             request.setAttribute("flash", e.getMessage());
             return "login";
