@@ -1,14 +1,17 @@
+<%@page import="java.sql.*"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>TOFKA &raquo; Login</title>
+        <title>Login Page &raquo;</title>
+        <link rel="stylesheet" type="text/css" href="graphics/main.css"/>
     </head>
     <body>
-        <div id="bd">
+        <h1>Login Page</h1>
+   <div id="bd">
             <h1>Log In To Your TOFKA Account</h1>
             <h2 class="flash">${flash}</h2>
-            <form method="SIGNUP" action="welcome.jsp">
+            <form method="POST" action="/TOFKA/">
                 <input type="hidden" name="action" value="login"/>
                 <table>
                     <tr>
@@ -24,7 +27,8 @@
                     </tr>          
                 </table>         
             </form>
-            <a href="welcome.jsp?action=welcome">Take me Back to the Welcome page</a>
+            <a href="welcome.jsp?action=welcome">Take Me Back To The Welcome Page</a>
         </div>
     </body>
 </html>
+
