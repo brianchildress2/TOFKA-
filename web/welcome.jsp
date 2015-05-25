@@ -3,20 +3,21 @@
 <html>
     <head>
         <title>TOFKA LTC &raquo;</title>
+        <link rel="stylesheet" type="text/css" href="graphics/main.css"/>
     </head>
     <body>
         <div id="bd">
             <h1>Welcome to TOFKA Long Term Care!</h1>
             <h2 class="flash">${flash}</h2>
-            <p>
+            <p>${sessionScope.userid}
                 <c:choose>
                     <c:when test="${sessionScope.user.username != null}">
-                        <a class="nav" href="/TOFKA/database.jsp">Hey, ${sessionScope.user.username}</a>
-                        <a class="nav" href="/TOFKA/logout.jsp">Logout of TOFKA</a>
+                        <a class="nav" href="database.jsp">Hey, ${sessionScope.user.username}</a>
+                        <a class="nav" href="logout.jsp">Logout of TOFKA</a>
                     </c:when>
                     <c:otherwise>
-                        <a class="nav" href="/TOFKA/login.jsp">Login</a>
-                        <a class="nav" href="/TOFKA/signup.jsp">Sign Up</a>
+                        <a class="nav" href="login.jsp">Login</a>
+                        <a class="nav" href="signup.jsp">Sign Up</a>
                     </c:otherwise>
                 </c:choose>
             </p>
