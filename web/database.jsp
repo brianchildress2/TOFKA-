@@ -28,8 +28,6 @@
             </c:forEach>
         </table>
         <br>
-        <a class="nav" href="welcome?action=welcome">Take Me Back To The Welcome Page</a>
-        <br>
-        <a class="nav" href="welcome?action=logout">Log Me Out Of TOFKA</a>
+        <a class="nav" href="welcome.jsp?action=logout">Log Me Out Of TOFKA</a>
     </body>
 </html>
