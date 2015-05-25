@@ -1,34 +1,35 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Database Page for ${sessionScope.user.username}</title>
+        <title>Database Page &raquo;</title>
+        <link rel="stylesheet" type="text/css" href="graphics/main.css"/>
     </head>
     <body>
-         <div id="bd">
-            <h1>TOFKA's Database for ${user.username}</h1>
-            <h2 class="flash">${flash}</h2>
-            <form method="SIGNUP" action="welcome.jsp">
-                <input type="hidden" name="action" value="database"/>
-                
-                <table>
-                    <tr>
-                        <div class="firstname">${signup.firstname}</div>
-                        <div class="lastname">${signup.lastname}</div>
-                        <div class="phonenumber">${signup.phonenumber}</div>
-                        <div class="emailaddress">${signup.emailaddress}</div>
-                        <div class="medicalhistory">${signup.medicalhistory}</div>
-                        <div class="joindate">${signup.joindate}</div>
-                        <c:if test="${sessionScope.user.id == user.id}">
-                            <td colspan="2"><input class="formElement" type="submit" value="Remove a File"/></td>
-                            <td colspan="2"><input class="formElement" type="submit" value="Update Database"/></td>
-                            <td colspan="2"><input class="formElement" type="submit" value="Logout"/></td>
-                        </c:if>
-                    </tr>          
-                </table>         
-            </form>
-            <a href="welcome.jsp?action=welcome">Take me back to the welcome page</a>
-        </div>
+        <h1>Database Page</h1>
+            <sql:query var="result" dataSource="jdbc/tofka">
+                SELECT * FROM signups
+            </sql:query>
+        <table border="1">
+            <!-- column headers -->
+            <tr>
+                <c:forEach var="columnName" items="${result.columnNames}">
+                    <th><c:out value="${columnName}"/></th>
+                </c:forEach>
+            </tr>
+            <!-- column data -->
+            <c:forEach var="row" items="${result.rowsByIndex}">
+                <tr>
+                    <c:forEach var="column" items="${row}">
+                        <td><c:out value="${column}"/></td>
+                    </c:forEach>
+                </tr>
+            </c:forEach>
+        </table>
+        <br>
+        <a class="nav" href="welcome?action=welcome">Take Me Back To The Welcome Page</a>
+        <br>
+        <a class="nav" href="action=logout">Log Me Out Of TOFKA</a>
     </body>
 </html>
