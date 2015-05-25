@@ -11,10 +11,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/")
+@WebServlet("")
 public class Controller extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("@" + request.getRequestURI());
+//        if (request.getRequestURI().endsWith(".css")) {
+//            request.getRequestDispatcher("/graphics/main.css").forward(request, response);
+//            return;
+//        }
+        
         String action = request.getParameter("action");
         if (action == null) action = "welcome";
         String destination;
@@ -44,7 +50,7 @@ public class Controller extends HttpServlet {
     }
     
     private String signup(HttpServletRequest request) throws ServletException {
-        Signup signup =(Signup)request.getSession().getAttribute("signup");
+        Signup signup = (Signup)request.getSession().getAttribute("signup");
         if (request.getMethod().equals("GET")) return "database";
         String firstname = request.getParameter("firstname");
         if (firstname.length() < 1 || firstname.length() > 20) {
@@ -62,7 +68,7 @@ public class Controller extends HttpServlet {
             return "signup";
         }
         String emailaddress = request.getParameter("emailaddress");
-        if (emailaddress.length() > 50) {
+        if (emailaddress.length() < 50) {
             request.setAttribute("flash", "Your email address must be less than 50 characters.");
             return "signup";
         }
@@ -95,11 +101,6 @@ public class Controller extends HttpServlet {
     }
     
     private String login(HttpServletRequest request) throws ServletException {
-   /*   User user = (User)request.getSession().getAttribute("user");
-        if (user == null) {
-            request.setAttribute("flash", "You are not logged in!");
-            return "login";
-        }*/
         if (request.getMethod().equals("GET")) return "login";
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -111,7 +112,7 @@ public class Controller extends HttpServlet {
             request.getSession().setAttribute("userid", user.getId());
             return "database";
         } catch (Exception e) {
-            request.setAttribute("flash", e.getMessage());
+            request.setAttribute("flash", "Enter A Valid Username And Password");
             return "login";
         }
     }
@@ -136,16 +137,8 @@ public class Controller extends HttpServlet {
         return "database";
     }
     
-    private String remove(HttpServletRequest request) throws ServletException {
-        return "database";
-    }
-    
-    private String update(HttpServletRequest request) throws ServletException {
-        return "database";
-    }
-    
     private String logout(HttpServletRequest request) throws ServletException {
-        request.getSession().removeAttribute("user");
+        request.getSession().invalidate();
         return welcome(request);
     }
     
