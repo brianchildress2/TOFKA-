@@ -1,0 +1,97 @@
+body {
+    background: #dddddd;
+    font-family: "Helvetica";
+}
+
+#hd {
+    padding: 1em;
+
+    /* Cross-browser gradient fill for the header */
+    background-image: linear-gradient(top, rgb(209,117,25) 5%, rgb(184,92,0) 100%, rgb(204,102,0) 100%);
+    background-image: -o-linear-gradient(top, rgb(209,117,25) 5%, rgb(184,92,0) 100%, rgb(204,102,0) 100%);
+    background-image: -moz-linear-gradient(top, rgb(209,117,25) 5%, rgb(184,92,0) 100%, rgb(204,102,0) 100%);
+    background-image: -webkit-linear-gradient(top, rgb(209,117,25) 5%, rgb(184,92,0) 100%, rgb(204,102,0) 100%);
+    background-image: -ms-linear-gradient(top, rgb(209,117,25) 5%, rgb(184,92,0) 100%, rgb(204,102,0) 100%);
+
+    background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0.05, rgb(209,117,25)),
+	color-stop(1, rgb(184,92,0)),
+	color-stop(1, rgb(204,102,0))
+    );
+}
+
+#bd {
+    margin-top: 0.5em;
+    background: white;
+    padding: 1em;
+}
+
+#ft {
+    background: #222222;
+    clear: both;
+    padding: 1em;
+    text-align: center;
+    color: white;
+    font-family: "Lucinda Grande",Arial;
+    font-size: 12pt;
+}
+
+.post {
+    margin: 18px;
+    border: 1px solid darkorange;
+    padding: 8px;
+    background: #dddddd;
+    border-radius: .5em;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+#postContent {
+    margin: 1em;
+    font-size: large;
+    width: 90%;    
+}
+
+.postSignups {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left: 3em;
+    font-size: larger;
+    border-top: 1px solid lightslategray;
+
+}
+
+.postDate {
+    font-size: smaller;
+}
+
+form {
+    margin: 8px;
+    padding: 8px;
+    background-color: #eeeeee;
+}
+
+.formElement {
+    margin: 4px;
+    padding: 4px;
+}
+
+.flash {
+    color: red;
+}
+
+.nav {
+    margin: 8px;
+    padding: 8px;
+    background-color: #dddddd;
+}
+
+a {
+    text-decoration: none;
+}
+
+.areaLabel {
+    vertical-align: top;
+}
