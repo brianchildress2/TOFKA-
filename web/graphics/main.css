@@ -5,6 +5,7 @@ body {
 
 #hd {
     padding: 1em;
+    text-align: center;
 
     /* Cross-browser gradient fill for the header */
     background-image: linear-gradient(top, rgb(209,117,25) 5%, rgb(184,92,0) 100%, rgb(204,102,0) 100%);
