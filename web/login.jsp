@@ -7,19 +7,20 @@
         <link rel="stylesheet" type="text/css" href="graphics/main.css"/>
     </head>
     <body>
-        <h1>Login Page</h1>
-   <div id="bd">
+        <div id="hd">
             <h1>Log In To Your TOFKA Account</h1>
+        </div>
+    <div id="bd">
             <h2 class="flash">${flash}</h2>
             <form method="POST" action="/TOFKA/">
                 <input type="hidden" name="action" value="login"/>
                 <table>
                     <tr>
-                        <td><label class="formElement" for="username">User Name:</label></td>
+                        <td>User Name:</td>
                         <td><input class="formElement" type="text" name="username"/></td>
                     </tr>
                     <tr>
-                        <td><label class="formElement" for="password">Password:</label></td>
+                        <td>Password:</td>
                         <td><input class="formElement" type="password" name="password"/></td>
                     </tr>
                     <tr>
@@ -28,6 +29,9 @@
                 </table>         
             </form>
             <a href="welcome.jsp?action=welcome">Take Me Back To The Welcome Page</a>
+        </div>
+        <div id="ft">
+            <h2>Sign In To See Who Is Interested In TOFKA</h2>
         </div>
     </body>
 </html>
