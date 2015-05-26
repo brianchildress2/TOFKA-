@@ -7,7 +7,10 @@
         <link rel="stylesheet" type="text/css" href="graphics/main.css"/>
     </head>
     <body>
+        <div id="hd">
         <h1>Database Page</h1>
+        </div>
+        <div id="bd">
             <sql:query var="result" dataSource="jdbc/tofka">
                 SELECT * FROM signups
             </sql:query>
@@ -28,6 +31,10 @@
             </c:forEach>
         </table>
         <br>
-        <a class="nav" href="welcome.jsp?action=logout">Log Me Out Of TOFKA</a>
+        <a class="nav" href="/TOFKA/?action=logout">Log Me Out Of TOFKA</a>
+        </div>
+        <div id="ft">
+            <h2>Candidates Interested In TOFKA</h2>
+        </div>
     </body>
 </html>
