@@ -1,0 +1,6 @@
+<glassfish-web-app>
+    <resource-ref>
+        <res-ref-name>jdbc/tofka</res-ref-name>
+        <jndi-name>jdbc/tofka</jndi-name>
+    </resource-ref>
+</glassfish-web-app>
