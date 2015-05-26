@@ -8,7 +8,10 @@
         <link rel="stylesheet" type="text/css" href="graphics/main.css"/> 
     </head>
     <body onload="displayResults()">
+        <div id="hd">
         <h1>Sign Up for TOFKA</h1>
+        </div>
+        <div id="bd">
             <h2 class="flash">${flash}</h2>
             
             <%!
@@ -94,7 +97,7 @@
             }
             %>
             
-            <form name="myForm" action="welcome.jsp" method="POST">
+            <form name="myForm" action="signup.jsp" method="POST">
                 <table border="0">
                     <tbody>
                         <tr>
@@ -125,14 +128,10 @@
                 </form>
                 <br>
                 <a href="/TOFKA/welcome.jsp?action=welcome">Take Me Back The Welcome Page</a>
-                <script LANGUAGE="JavaScript">
-                <!--
-                    function displayResults() {
-                        if(document.myForm.hidden.value === 1) {
-                            alert("Data Inserted!");
-                        }
-                    }
-                -->
-                </script>
+                <br>
+        </div>
+        <div id="ft">
+            <h2>TOFKA -- The Mature Place To Live</h2>
+        </div>        
     </body>
 </html>
